@@ -1,0 +1,8 @@
+[submodule "src/third_party/doxybook2"]
+	path = src/third_party/doxybook2
+	url = https://github.com/matusnovak/doxybook2
+	shallow = true
+[submodule "src/third_party/inja"]
+	path = src/third_party/inja
+	url = https://github.com/pantor/inja
+	shallow = true

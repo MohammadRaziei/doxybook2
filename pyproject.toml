@@ -23,10 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 requires-python = ">=3.8"
-dependencies = [
-    "scikit-build-core[pyproject]<0.11.6",
-    "cython"
-]
+dependencies = []
 
 [project.scripts]
 doxybook2 = "doxybook2.__main__:main"

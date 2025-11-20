@@ -5,7 +5,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "doxybook2"
 version = "0.1.0"
-description = "Python bindings for whisper.cpp using Cython"
+description = "Python bindings for Doxybook2 using Cython"
 authors = [
     {name = "Mohammad Raziei", email = "mohammadraziei1375@gmail.com"},
 ]
@@ -24,7 +24,8 @@ classifiers = [
 ]
 requires-python = ">=3.8"
 dependencies = [
-    "scikit-build-core[pyproject]<0.11.6", "cython"
+    "scikit-build-core[pyproject]<0.11.6",
+    "cython"
 ]
 
 [project.scripts]
@@ -49,13 +50,17 @@ dev = [
 [tool.setuptools.package-dir]
 doxybook2 = "src/doxybook2"
 
+[tool.setuptools]
+packages = ["doxybook2"]
+
 [tool.scikit-build.cmake]
 version = ">=3.15"
 build-type = "Release"
 
 [tool.scikit-build]
 sdist.include = [
-    "src/third_party/whisper.cpp/**/*"
+    "src/third_party/doxybook2/**/*",
+    "src/third_party/inja/**/*"
 ]
 
 

@@ -1,65 +1,38 @@
-![whisper-cpp](docs/images/whisper-cpp.svg)
-
 # doxybook2
 
-Python bindings for [whisper.cpp](https://github.com/ggerganov/whisper.cpp) using Cython and scikit-build.
-
-## Overview
-
-This project provides Python bindings for the [whisper.cpp](https://github.com/ggerganov/whisper.cpp) library, enabling speech recognition capabilities in Python with native performance through Cython integration.
-
-**Note:** This project is not just for Python developers! C++ developers can also use the pre-built whisper.cpp library included in this package instead of building whisper.cpp from source.
-
-## Features
-
-- Python bindings for whisper.cpp speech recognition
-- Built with Cython for optimal performance
-- CMake integration via scikit-build
-- Built-in model downloader with CLI interface
-- Test-driven development approach
+Python bindings and CLI wrapper for the Doxybook2 toolkit. The package builds the bundled C++ sources from `src/third_party/doxybook2` and exposes a small Cython bridge to generate documentation directly from Python.
 
 ## Installation
 
-```bash
-pip install doxybook2
-```
-
-For the latest development version:
-```bash
-pip install git+https://github.com/MohammadRaziei/whisper-cpp.git
-```
-
-## Quick Start
-
-### Download Models
+Build locally with the bundled dependencies:
 
 ```bash
-# List available models
-doxybook2 models list
-
-# Download a model
-doxybook2 models download tiny
-
-# Download to specific path
-doxybook2 models download base /path/to/models
+pip install . --no-build-isolation
 ```
 
-### Python Usage
+## Usage
+
+Generate documentation via Python:
 
 ```python
-from doxybook2.models import download_model
+from doxybook2 import build_docs
 
-# Download a model
-download_model("tiny")
+build_docs(
+    input_dir="./doxygen/xml",
+    output_dir="./docs",
+    config_path="./doxybook.json",
+)
 ```
+
+Or use the CLI entrypoint:
+
+```bash
+doxybook2 --input ./doxygen/xml --output ./docs --config ./doxybook.json
+```
+
+Use `--json` to emit JSON only, `--templates` to override templates, `--quiet` to silence logs, and `--debug-templates` to dump template debug JSON.
 
 ## Development
 
-Run tests:
-```bash
-pytest -n auto
-```
+Tests are not provided yet. Build artifacts rely on CMake and Cython; you can trigger a rebuild with `pip install . --no-build-isolation`.
 
-## License
-
-MIT License

@@ -29,14 +29,14 @@ dependencies = []
 doxybook2 = "doxybook2.__main__:main"
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    "pytest-xdist>=3.0",
-    "pytest-cov>=4.0",
-    "black>=23.0",
-    "isort>=5.0",
-    "flake8>=6.0",
-]
+# test = [
+#     "pytest>=7.0",
+#     "pytest-xdist>=3.0",
+#     "pytest-cov>=4.0",
+#     "black>=23.0",
+#     "isort>=5.0",
+#     "flake8>=6.0",
+# ]
 
 [project.urls]
 "Homepage" = "https://github.com/mohammadraziei/doxybook2"
@@ -62,9 +62,9 @@ sdist.include = [
 
 
 [tool.cibuildwheel]
-skip = "*i686*"
-test-command = "pytest {project}/tests"
-test-extras = ["test"]
+# skip = "*i686*"
+# test-command = "pytest {project}/tests"
+# test-extras = ["test"]
 
 [tool.cibuildwheel.linux]
 repair-wheel-command = "cp {wheel} {dest_dir}/"

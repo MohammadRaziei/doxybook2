@@ -62,7 +62,7 @@ sdist.include = [
 
 
 [tool.cibuildwheel]
-# skip = "*i686*"
+skip = "*i686*"
 # test-command = "pytest {project}/tests"
 # test-extras = ["test"]
 

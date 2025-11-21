@@ -36,10 +36,10 @@ target_include_directories(Doxybook2 PUBLIC
 
 cython_transpile(src/doxybook2/_doxybook2.pyx LANGUAGE CXX OUTPUT_VARIABLE doxybook2_cpp_file)
 
-python_add_library(${MODULE_NAME} MODULE "${doxybook2_cpp_file}" src/cpp/DoxybookBinding.cpp WITH_SOABI)
+python_add_library(${MODULE_NAME} MODULE "${doxybook2_cpp_file}" src/DoxybookBinding.cpp WITH_SOABI)
 
 target_include_directories(${MODULE_NAME} PRIVATE
-    src/cpp
+    src/
     ${CMAKE_SOURCE_DIR}/src/third_party/doxybook2/include
 )
 
